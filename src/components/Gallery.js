@@ -1,62 +1,101 @@
-import React, { Component } from 'react'
-import Carousel, { Modal, ModalGateway } from 'react-images'
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import Lightbox from 'react-images';
 
 class Gallery extends Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       lightboxIsOpen: false,
-      selectedIndex: 0,
-    }
+      currentImage: 0,
+    };
 
-    this.toggleLightbox = this.toggleLightbox.bind(this)
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.gotoNext = this.gotoNext.bind(this);
+    this.gotoPrevious = this.gotoPrevious.bind(this);
+    this.gotoImage = this.gotoImage.bind(this);
+    this.handleClickImage = this.handleClickImage.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
   }
-  toggleLightbox(selectedIndex) {
-    this.setState(state => ({
-      lightboxIsOpen: !state.lightboxIsOpen,
-      selectedIndex,
-    }))
+  openLightbox(index, event) {
+    event.preventDefault();
+    this.setState({
+      currentImage: index,
+      lightboxIsOpen: true,
+    });
   }
-  renderGallery(images) {
-    if (!images) return
+  closeLightbox() {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false,
+    });
+  }
+  gotoPrevious() {
+    this.setState({
+      currentImage: this.state.currentImage - 1,
+    });
+  }
+  gotoNext() {
+    this.setState({
+      currentImage: this.state.currentImage + 1,
+    });
+  }
+  gotoImage(index) {
+    this.setState({
+      currentImage: index,
+    });
+  }
+  handleClickImage() {
+    if (this.state.currentImage === this.props.images.length - 1) return;
+
+    this.gotoNext();
+  }
+  renderGallery() {
+    const { images } = this.props;
+
+    if (!images) return;
 
     const gallery = images.map((obj, i) => {
-      console.log(obj)
       return (
         <a
-          className={obj.landscape ? 'landscape' : ''}
-          key={obj.source}
-          href={obj.source}
-          onClick={e => {
-            e.preventDefault()
-            this.toggleLightbox(i)
-          }}
+          key={obj.src}
+          href={obj.src}
+          onClick={e => this.openLightbox(i, e)}
+          className={`${obj.full ? 'landscape' : ''}`}
         >
-          <img src={obj.thumbnail} />
+          <img src={obj.thumbnail} alt="" />
         </a>
-      )
-    })
+      );
+    });
 
-    return <div className="gallery">{gallery}</div>
+    return <div className="gallery"> {gallery} </div>;
   }
   render() {
-    const { images } = this.props
-    const { selectedIndex, lightboxIsOpen } = this.state
-
     return (
-      <div>
-        {this.renderGallery(images)}
-        <ModalGateway>
-          {lightboxIsOpen && (
-            <Modal onClose={this.toggleLightbox}>
-              <Carousel currentIndex={selectedIndex} views={images} />
-            </Modal>
-          )}
-        </ModalGateway>
-      </div>
-    )
+      <>
+        {this.renderGallery()}
+        <Lightbox
+          currentImage={this.state.currentImage}
+          images={this.props.images.map(img => {
+            img.caption = `${img.title} - ${img.desc}`;
+            return img;
+          })}
+          isOpen={this.state.lightboxIsOpen}
+          onClickImage={this.handleClickImage}
+          onClickNext={this.gotoNext}
+          onClickPrev={this.gotoPrevious}
+          onClickThumbnail={this.gotoImage}
+          onClose={this.closeLightbox}
+        />
+      </>
+    );
   }
 }
 
-export default Gallery
+Gallery.displayName = 'Gallery';
+Gallery.propTypes = {
+  images: PropTypes.array,
+};
+
+export default Gallery;
