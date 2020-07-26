@@ -160,7 +160,7 @@
 		z-index: -1;
 
 		& + label {
-			@include icon(false, solid);
+			@include icon;
 			color: _palette(fg);
 			cursor: pointer;
 			display: inline-block;
@@ -178,14 +178,13 @@
 				border: solid 2px _palette(border);
 				content: '';
 				display: inline-block;
-				font-size: 0.8rem;
-				height: (_size(element-height) * 0.75);
+				height: (_size(element-height) * 0.6);
 				left: 0;
-				line-height: (_size(element-height) * 0.75);
+				line-height: (_size(element-height) * 0.575);
 				position: absolute;
 				text-align: center;
 				top: (_size(element-height) * -0.05);
-				width: (_size(element-height) * 0.75);
+				width: (_size(element-height) * 0.6);
 			}
 		}
 

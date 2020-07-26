@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 export default function ContactForm() {
   return (
     <>
@@ -11,13 +11,18 @@ export default function ContactForm() {
           ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor
           mattis sagittis.
         </p>
-        <form>
+        <form method="post" action="https://formspree.io/xknqkkwd">
           <div className="fields">
             <div className="field half">
               <input type="text" name="name" id="name" placeholder="Name" />
             </div>
             <div className="field half">
-              <input type="email" name="email" id="email" placeholder="Email" />
+              <input
+                type="email"
+                name="_replyto"
+                id="email"
+                placeholder="Email"
+              />
             </div>
             <div className="field">
               <textarea
@@ -37,8 +42,9 @@ export default function ContactForm() {
               />
             </li>
           </ul>
+          <input type="text" name="_gotcha" style={{ display: 'none' }} />
         </form>
       </div>
     </>
-  );
+  )
 }
