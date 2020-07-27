@@ -151,7 +151,9 @@ const IndexPage = () => (
 
           <section>
             <header>
-              <h3>Iron Spider</h3>
+              <a href="https://www.example.com" className="large">
+                <h3>Iron Spider</h3>
+              </a>
               <p>
                 Vehicula ultrices dolor amet ultricies et condimentum. Magna sed
                 etiam consequat, et lorem adipiscing sed dolor sit amet,
@@ -166,7 +168,9 @@ const IndexPage = () => (
 
           <section>
             <header>
-              <h3>Ultimate Spiderman</h3>
+              <Link to="/Elements" className="large">
+                <h3>Ultimate Spiderman</h3>
+              </Link>
               <p>
                 Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
                 aliquam sed facilisis ante interdum congue. Integer mollis, nisl
@@ -183,7 +187,9 @@ const IndexPage = () => (
 
           <section>
             <header>
-              <h3>Amazing Spiderman</h3>
+              <Link to="/Elements" className="large">
+                <h3>Amazing Spiderman</h3>
+              </Link>
               <p>
                 Proin aliquam facilisis ante interdum. Sed nulla amet lorem
                 feugiat tempus aenean ornare velit lacus, ac varius sed enim
