@@ -20,4 +20,6 @@ gatsby new gatsby-starter-paradigm-shift https://github.com/TeamYayin/gatsby-sta
 
 Run `gatsby develop` in the terminal to start the dev site. change content in components/layout or index.html file.
 
+included github actions to deploy into gh-pages
+
 Check out https://codebushi.com/gatsby-starters-and-themes/ for more Gatsby starters and themes of the original repo.
