@@ -7,10 +7,12 @@ module.exports = {
   manifestThemeColor: '#663399',
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/website-icon.png',
-  // pathPrefix: `/gatsby-starter-paradigmshift/`, // This path is subpath of your hosting https://domain/portfolio
+  // pathPrefix: This path is subpath of your hosting https://domain/pathPrefix
+
   heading: 'Peter Parker',
   subHeading: 'High School Kid & Part time Web Slinger',
-  // social
+
+  // social media likes add your channels
   socialLinks: [
     {
       icon: 'fa-github',
@@ -27,8 +29,18 @@ module.exports = {
       name: 'Facebook',
       url: 'https://facebook.com/#',
     },
+    {
+      icon: 'fa-linkedin',
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/#',
+    },
+    {
+      icon: 'fa-instagram',
+      name: 'Instagram',
+      url: 'https://instagram.com/#',
+    },
   ],
-  emailId: 'peter.parker@gmail.com',
-  phone: '2018239123',
+  emailId: 'peter.parker@example.com',
+  phone: '+12018239123', //
   address: 'Midtown High, New York City, USA',
 }

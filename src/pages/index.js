@@ -11,7 +11,7 @@ import Gallery from '../components/Gallery'
 import ContactForm from '../components/ContactForm'
 import { Link } from 'gatsby'
 
-const img_set_1 = [
+const project1_img_set = [
   {
     src: require('../assets/img/gallery/fulls/01.jpg'),
     thumbnail: require('../assets/img/gallery/thumbs/01.jpg'),
@@ -39,7 +39,7 @@ const img_set_1 = [
     full: true,
   },
 ]
-const img_set_2 = [
+const project2_img_set = [
   {
     src: require('../assets/img/gallery/fulls/05.jpg'),
     thumbnail: require('../assets/img/gallery/thumbs/05.jpg'),
@@ -60,7 +60,7 @@ const img_set_2 = [
     desc: 'Be one with the present',
   },
 ]
-const img_set_3 = [
+const project3_img_set = [
   {
     src: require('../assets/img/gallery/fulls/08.jpg'),
     thumbnail: require('../assets/img/gallery/thumbs/08.jpg'),
@@ -95,7 +95,7 @@ const IndexPage = () => (
 
       <section id="first">
         <header>
-          <h2>Magna sed nullam nisl adipiscing</h2>
+          <h2>Highlights</h2>
         </header>
         <div className="content">
           <p>
@@ -115,7 +115,7 @@ const IndexPage = () => (
 
       <section>
         <header>
-          <h2>Feugiat consequat tempus ultrices</h2>
+          <h2>Skills</h2>
         </header>
         <div className="content">
           <p>
@@ -141,7 +141,7 @@ const IndexPage = () => (
 
       <section>
         <header>
-          <h2>Ultrices erat magna sed condimentum</h2>
+          <h2>Projects</h2>
         </header>
         <div className="content">
           <p>
@@ -151,7 +151,7 @@ const IndexPage = () => (
 
           <section>
             <header>
-              <h3>Erat aliquam</h3>
+              <h3>Iron Spider</h3>
               <p>
                 Vehicula ultrices dolor amet ultricies et condimentum. Magna sed
                 etiam consequat, et lorem adipiscing sed dolor sit amet,
@@ -160,13 +160,13 @@ const IndexPage = () => (
               </p>
             </header>
             <div className="content">
-              <Gallery images={img_set_1} />
+              <Gallery images={project1_img_set} />
             </div>
           </section>
 
           <section>
             <header>
-              <h3>Nisl consequat</h3>
+              <h3>Ultimate Spiderman</h3>
               <p>
                 Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
                 aliquam sed facilisis ante interdum congue. Integer mollis, nisl
@@ -176,14 +176,14 @@ const IndexPage = () => (
             </header>
             <div className="content">
               <div className="gallery">
-                <Gallery images={img_set_2} />
+                <Gallery images={project2_img_set} />
               </div>
             </div>
           </section>
 
           <section>
             <header>
-              <h3>Lorem gravida</h3>
+              <h3>Amazing Spiderman</h3>
               <p>
                 Proin aliquam facilisis ante interdum. Sed nulla amet lorem
                 feugiat tempus aenean ornare velit lacus, ac varius sed enim
@@ -193,7 +193,7 @@ const IndexPage = () => (
             </header>
             <div className="content">
               <div className="gallery">
-                <Gallery images={img_set_3} />
+                <Gallery images={project3_img_set} />
               </div>
             </div>
           </section>
@@ -202,7 +202,7 @@ const IndexPage = () => (
 
       <section>
         <header>
-          <h2>Duis sed adpiscing veroeros amet</h2>
+          <h2>About Me</h2>
         </header>
         <div className="content">
           <p>
@@ -215,11 +215,11 @@ const IndexPage = () => (
                 Goto Elements Page
               </Link>
             </li>
-            {/* <li>
-              <a href="/#" className="button large">
-                Learn More
+            <li>
+              <a href="https://example.com" className="button large">
+                Go Outside
               </a>
-            </li> */}
+            </li>
           </ul>
         </div>
       </section>
